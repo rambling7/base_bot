@@ -31,15 +31,6 @@ class BaseBot:
 
 m_bot = BaseBot('451270396:AAFXlo_QyZ2x9a5OWIGhL4XSdgTWOY7S_2Y')
 
-
-'''
-#TEST
-json = m_bot.get_updates()
-
-print(json)
-'''
-
-
 motivations = ('встрой поисковики', 
 			'взбодрись и продолжай', 
 			'читай книги',
