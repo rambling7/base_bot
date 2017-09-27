@@ -43,7 +43,7 @@ motivations = ('встрой поисковики',
 			'доделай меня',
 			'изучай машинное обучение')
 			
-advice = 'совет'
+advice = 'привет'
 
 now = datetime.datetime.now()
 
