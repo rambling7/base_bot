@@ -26,11 +26,10 @@ class BaseBot:
 		if len(get_result) > 0:
 			last_update = get_result[-1]
 		else:
-			last_update = get_result(len(get_result))
+			last_update = None
 		return last_update
 
-m_bot = BaseBot('451270396:AAFXlo_QyZ2x9a5OWIGhL4XSdgTWOY7S_2Y')
-
+#	need migrate this to db (late)
 motivations = ('встрой поисковики', 
 			'взбодрись и продолжай', 
 			'читай книги',
@@ -45,25 +44,24 @@ motivations = ('встрой поисковики',
 			
 advice = 'привет'
 
-now = datetime.datetime.now()
+m_bot = BaseBot('451270396:AAFXlo_QyZ2x9a5OWIGhL4XSdgTWOY7S_2Y')	
 
 def main():
+	
 	new_offset = None
 
 	while 1:
 		m_bot.get_updates(new_offset)
 		last_update = m_bot.get_last_update()
-		
-		last_update_id = last_update['update_id']
-		last_chat_text = last_update['message']['text']
-		last_chat_id = last_update['message']['chat']['id']
-		last_chat_name = last_update['message']['chat']['first_name']
-		
-		if last_chat_text.lower() == advice:
+		if last_update != None:
+			last_update_id = last_update['update_id']
+			last_chat_text = last_update['message']['text']	
+			last_chat_id = last_update['message']['chat']['id']				
+			last_chat_name = last_update['message']['chat']['first_name']
 			m_bot.send_message(last_chat_id, random.choice(motivations))
-	
-		new_offset = last_update_id + 1
-		
+			new_offset = last_update_id + 1
+		else:
+			continue
 
 if __name__ == '__main__':
 	try:
@@ -71,4 +69,5 @@ if __name__ == '__main__':
 	except KeyboardInterrupt:
 		exit()
 		 
+
 
