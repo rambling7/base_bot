@@ -1,7 +1,6 @@
 import requests
 import random
 
-
 class BaseBot:
 	
 	def __init__(self, token):
