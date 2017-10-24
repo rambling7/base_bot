@@ -44,7 +44,7 @@ class SimpleResponseBot(BaseBot):
 							'изучай машинное обучение')
 		self.send_message(response_id, choice(response_base))
 		
-class TestCommandBot(BaseBot):
+class RemindCommandBot(BaseBot):
 	pass
 	
 	
