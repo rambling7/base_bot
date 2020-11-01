@@ -31,17 +31,9 @@ class BaseBot:
 class SimpleResponseBot(BaseBot):
 	
 	def auto_response(self, response_id):
-		response_base = (	'встрой поисковики', 
-							'взбодрись и продолжай', 
-							'читай книги',
-							'не тупи, делай',
-							'ты молодец',
-							'изучай апи',
-							'изучай линукс',
-							'изучай питон',
-							'решай задачи',
-							'доделай меня',
-							'изучай машинное обучение')
+		response_base = (	'test response 1', 
+							'test response 2', 
+							'test response 3')
 		self.send_message(response_id, choice(response_base))
 		
 class RemindCommandBot(BaseBot):

@@ -15,7 +15,7 @@ def main(my_bot):
 	
 if __name__ == '__main__':
 	try:
-		test_bot = SimpleResponseBot('451270396:AAFXlo_QyZ2x9a5OWIGhL4XSdgTWOY7S_2Y')
+		test_bot = SimpleResponseBot('SOME_TOKEN')
 		main(test_bot)
 	except KeyboardInterrupt:
 		exit()
